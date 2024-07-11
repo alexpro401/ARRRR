@@ -17,6 +17,7 @@
         // Весь JavaScript код будет здесь
         let scene, camera, renderer;
         let cube;
+        let gameActive = false; // Инициализация переменной gameActive
 
         function init() {
             scene = new THREE.Scene();
@@ -53,6 +54,16 @@
 
         // Инициализация Telegram Web App
         window.Telegram.WebApp.ready();
+
+        // Функция инициализации TonProvider
+        function initTonProvider() {
+            if (window.ton && typeof window.ton.destroy === 'function') {
+                window.ton.destroy();
+            }
+        }
+
+        // Запуск TonProvider
+        initTonProvider();
 
         // Запуск приложения
         init();
