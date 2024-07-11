@@ -13,8 +13,11 @@
 </head>
 <body>
     <div id="info">AR Crypto Collectibles</div>
-    <script>
-        // Весь JavaScript код будет здесь
+    <script type="module">
+        import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.module.js';
+        import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three/examples/jsm/loaders/GLTFLoader.js';
+        import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three/examples/jsm/controls/OrbitControls.js';
+
         let scene, camera, renderer;
         let cube;
         let gameActive = false; // Инициализация переменной gameActive
