@@ -1,9 +1,6 @@
-let tg = window.Telegram.WebApp;
-tg.expand();
-
-let camera, scene, renderer, controls, stats, particles;
+let tg, camera, scene, renderer, controls, stats, particles;
 let collectibles = [];
-const loader = new THREE.GLTFLoader();
+let loader;
 
 let userLevel = 1;
 let userExperience = 0;
@@ -28,8 +25,17 @@ const cryptoData = {
     }
 };
 
-init();
-animate();
+function initializeApp() {
+    tg = window.Telegram.WebApp;
+    tg.expand();
+
+    loader = new THREE.GLTFLoader();
+
+    init();
+    animate();
+
+    document.getElementById('startGameBtn').addEventListener('click', startMiniGame);
+}
 
 function init() {
     camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 1000);
@@ -262,3 +268,6 @@ function animate() {
 
     renderer.render(scene, camera);
 }
+
+// Ждем загрузки всех скриптов перед инициализацией приложения
+window.addEventListener('load', initializeApp);
