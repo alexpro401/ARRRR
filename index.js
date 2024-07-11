@@ -25,7 +25,19 @@ const cryptoData = {
     }
 };
 
-function initializeApp() {
+function waitForThree() {
+    return new Promise(resolve => {
+        if (typeof THREE !== 'undefined' && THREE.REVISION) {
+            resolve();
+        } else {
+            setTimeout(() => waitForThree().then(resolve), 100);
+        }
+    });
+}
+
+async function initializeApp() {
+    await waitForThree();
+    
     tg = window.Telegram.WebApp;
     tg.expand();
 
