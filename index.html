@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AR Crypto Collectibles</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"></script>
+    <script src="https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.160.0/examples/jsm/libs/stats.module.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #info { position: absolute; top: 10px; width: 100%; text-align: center; color: #ffffff; }
+        #cryptoInfo { position: absolute; bottom: 10px; left: 10px; color: #ffffff; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px; display: none; }
+        #levelInfo { position: absolute; top: 10px; left: 10px; color: #ffffff; }
+        #gameContainer { display: none; position: absolute; top: 10px; right: 10px; color: white; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px; }
+        #startGameBtn { position: absolute; bottom: 10px; right: 10px; }
+    </style>
+</head>
+<body>
+    <div id="info">AR Crypto Collectibles</div>
+    <div id="cryptoInfo"></div>
+    <div id="levelInfo"></div>
+    <div id="gameContainer">
+        <div id="gameScore"></div>
+        <div id="gameTimer"></div>
+    </div>
+    <button id="startGameBtn" onclick="startMiniGame()">Start Mini-Game</button>
+    <script src="index.js"></script>
+</body>
+</html>
